@@ -280,17 +280,6 @@ def _make_api_tool_result(
                     "text": _maybe_prepend_system_tool_result(result, result.output),
                 }
             )
-        if result.base64_image:
-            tool_result_content.append(
-                {
-                    "type": "image",
-                    "source": {
-                        "type": "base64",
-                        "media_type": "image/png",
-                        "data": result.base64_image,
-                    },
-                }
-            )
     return {
         "type": "tool_result",
         "content": tool_result_content,
