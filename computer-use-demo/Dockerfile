@@ -34,7 +34,7 @@ RUN apt-get update && \
     # Network tools
     net-tools \
     netcat \
-    iputils \
+    iputils-ping \
     iproute2 \
     dnsutils \
     telnet \
