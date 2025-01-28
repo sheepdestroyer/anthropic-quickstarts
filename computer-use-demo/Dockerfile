@@ -34,22 +34,21 @@ RUN apt-get update && \
     # Network tools
     net-tools \
     netcat \
+    iputils \
+    iproute2 \
+    dnsutils \
+    telnet \
     # PPA req
     software-properties-common && \
     # Userland apps
     sudo add-apt-repository ppa:mozillateam/ppa && \
     sudo apt-get install -y --no-install-recommends \
-    libreoffice \
+    vim \
+    htop \
     firefox-esr \
     x11-apps \
-    xpdf \
-    gedit \
-    xpaint \
     tint2 \
-    galculator \
-    pcmanfm \
-    unzip && \
-    apt-get clean
+    && apt-get clean
 
 # Install noVNC
 RUN git clone --branch v1.5.0 https://github.com/novnc/noVNC.git /opt/noVNC && \
