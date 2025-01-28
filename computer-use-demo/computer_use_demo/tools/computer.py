@@ -190,7 +190,12 @@ class ComputerTool(BaseAnthropicTool):
                     "middle_click": "2",
                     "double_click": "--repeat 2 --delay 500 1",
                 }[action]
-                return await self.shell(f"{self.xdotool} click {click_arg}")
+                # Disable screenshots for left clicks only
+                take_screenshot = action != "left_click"
+                return await self.shell(
+                    f"{self.xdotool} click {click_arg}",
+                    take_screenshot=take_screenshot
+                )
 
         raise ToolError(f"Invalid action: {action}")
 
