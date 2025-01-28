@@ -41,14 +41,14 @@ RUN apt-get update && \
     # PPA req
     software-properties-common && \
     # Userland apps
-    sudo add-apt-repository ppa:mozillateam/ppa && \
-    sudo apt-get install -y --no-install-recommends \
+    add-apt-repository ppa:mozillateam/ppa && \
+    apt-get install -y --no-install-recommends \
     vim \
     htop \
     firefox-esr \
     x11-apps \
-    tint2 \
-    && apt-get clean
+    tint2 && \
+    apt-get clean
 
 # Install noVNC
 RUN git clone --branch v1.5.0 https://github.com/novnc/noVNC.git /opt/noVNC && \
